@@ -2,15 +2,21 @@ from gensim import downloader
 import csv
 import os
 
-model_base_dir = "../Models"
 synonyms_file = "../synonyms/synonyms.csv"
-deliverables_path = "./deliverables/"
-model_name = "word2vec-google-news-300"
+deliverables_path = "../deliverables/"
 
-details_header = ["question-word", "answer-word", "guess-word", "result"]
+# Task 1
+google_model_name = "word2vec-google-news-300"
+
+# Task 2.1
+twitter_model_name_50 = "glove-twitter-50"
+wiki_model_name = "glove-wiki-gigaword-50"
+
+# Task 2.2
+twitter_model_name_25 = "glove-twitter-25"
+twitter_model_name_100 = "glove-twitter-100"
+
 detail_results = []
-
-analysis_header = ["model name", "size of the vocabulary", "C", "V", "C/V"]
 
 counter_correct = 0
 counter_wrong = 0
@@ -70,17 +76,16 @@ def evaluate_synonyms(model, synonyms):
         detail_results.append([question_word, correct_answer, guess_word, result])
 
 
-def main():
-    # Load synonyms
-    synonyms = load_synonyms()
+def evaluate_synonyms_with_model(model_name, synonyms_list, first=False):
+    global detail_results, counter_correct, counter_wrong, counter_guess
 
     # Load model into memory
-    print("Loading model...\n")
+    print(F"Loading {model_name}...\n")
     model = downloader.load(model_name)
 
     # Evaluate guesses for each synonym question
     print('Evaluating synonyms...\n')
-    evaluate_synonyms(model, synonyms)
+    evaluate_synonyms(model, synonyms_list)
 
     # Print counter results
     print(F'Correct\t\t{counter_correct}')
@@ -94,17 +99,36 @@ def main():
     # Write CSV details output file
     with open(deliverables_path + model_name + "-details.csv", 'w') as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=',', lineterminator='\n')
-        csv_writer.writerow(details_header)
         csv_writer.writerows(detail_results)
 
     # Write CSV analysis output csv_file
-    with open(deliverables_path + model_name + "-analysis.csv", 'w') as csv_file:
+    with open(deliverables_path + "analysis.csv", 'w' if first else 'a') as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=',', lineterminator='\n')
-        csv_writer.writerow(details_header)
 
         without_guess = 80 - counter_guess
         accuracy = counter_correct / without_guess
         csv_writer.writerow([model_name, len(model.index_to_key), counter_correct, without_guess, accuracy])
+
+    detail_results = []
+    counter_correct = 0
+    counter_wrong = 0
+    counter_guess = 0
+
+
+def main():
+    # Load synonyms
+    synonyms = load_synonyms()
+
+    # Task 1
+    evaluate_synonyms_with_model(google_model_name, synonyms, True)
+
+    # Task 2.1
+    evaluate_synonyms_with_model(twitter_model_name_50, synonyms)
+    evaluate_synonyms_with_model(wiki_model_name, synonyms)
+
+    # Task 2.2
+    evaluate_synonyms_with_model(twitter_model_name_25, synonyms)
+    evaluate_synonyms_with_model(twitter_model_name_100, synonyms)
 
 
 if __name__ == "__main__":
