@@ -9,7 +9,7 @@ Ensure Python 3.7 is installed
 ## Step 2:
 Install the required packages to run the project:
 ``` 
-pip install -r PATH\TO\472_Assignment3_21955039_40098297_40034877\requirements-3.7.txt
+pip install --upgrade gensim
 ``` 
 
 ## Step 3:
