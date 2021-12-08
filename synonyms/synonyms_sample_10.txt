@@ -1,0 +1,120 @@
+75.	sufficient
+a.	recent
+b.	physiological
+c.	enough
+d.	valuable
+c
+70.	expeditiously
+a.	frequently
+b.	actually
+c.	rapidly
+d.	repeatedly
+c
+17.	constantly
+a.	instantly
+b.	continually
+c.	rapidly
+d.	accidentally
+b
+59.	concocted
+a.	devised
+b.	cleaned
+c.	requested
+d.	supervised
+a
+18.	issues
+a.	training
+b.	salaries
+c.	subjects
+d.	benefits
+c
+21.	recognized
+a.	successful
+b.	depicted
+c.	acknowledged
+d.	welcomed
+c
+77.	marketed
+a.	frozen
+b.	sold
+c.	sweetened
+d.	diluted
+b
+57.	hailed
+a.	judged
+b.	acclaimed
+c.	remembered
+d.	addressed
+b
+6.	flawed
+a.	tiny
+b.	imperfect
+c.	lustrous
+d.	crude
+b
+27.	narrow
+a.	clear
+b.	freezing
+c.	thin
+d.	poisonous
+c
+78.	bigger
+a.	steadier
+b.	closer
+c.	larger
+d.	better
+c
+26.	debate
+a.	war
+b.	argument
+c.	election
+d.	competition
+b
+23.	make
+a.	earn
+b.	print
+c.	trade
+d.	borrow
+a
+13.	hasten
+a.	permit
+b.	determine
+c.	accelerate
+d.	accompany
+c
+58.	command
+a.	observation
+b.	love
+c.	awareness
+d.	mastery
+d
+11.	salutes
+a.	information
+b.	ceremonies
+c.	greetings
+d.	privileges
+c
+31.	levied
+a.	imposed
+b.	believed
+c.	requested
+d.	correlated
+a
+60.	prospective
+a.	particular
+b.	prudent
+c.	potential
+d.	prominent
+c
+40.	highlight
+a.	alter
+b.	imitate
+c.	accentuate
+d.	restore
+c
+33.	distribute
+a.	commercialize
+b.	circulate
+c.	research
+d.	acknowledge
+b
