@@ -105,7 +105,7 @@ def evaluate_synonyms_with_model(model_name, synonyms_list, first=False):
     with open(deliverables_path + "analysis.csv", 'w' if first else 'a') as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=',', lineterminator='\n')
 
-        without_guess = 80 - counter_guess
+        without_guess = len(synonyms_list) - counter_guess
         accuracy = counter_correct / without_guess
         csv_writer.writerow([model_name, len(model.index_to_key), counter_correct, without_guess, accuracy])
 
